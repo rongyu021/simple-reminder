@@ -1,0 +1,10 @@
+mcp
+langchain
+langchain-openai
+langchain-mcp-adapters
+langchainhub # For pulling prompts
+langchain-community # May be needed for hub or other components
+pytest
+pytest-asyncio
+pytest-cov
+python-dotenv
