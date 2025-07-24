@@ -3,12 +3,12 @@
 Please write a MCP server in python for to-do task list management:
 -  It should supports CRUD operation: create a new task, update a task, delete a task, get a list of tasks in a time window.
 - Every to-do task should have the following properties
-    - task id. The format is {UUID}_{createTimestamp}.
+    - task id. The format is {UUID}_{dueTimestamp}.
     - task summary. It's one sentence. It can't be empty.
     - task details. It can be multiple sentences. It can't be emtpy
     - Is it an one off task or a recurring one?
     - If a recurring task, how often it recurs (daily, weekly, monthly,yearly, number of days, number of weeks, number of months).
-    - task due time. For a recurring task, this is the due time for the upcoming one. This can't be empty. For a new task being created, the due time must be a time in the future.
+    - task due time. This can't be empty. For a new task being created, the due time must be a time in the future.
     - A series of times to alert user ahead of the due time. Default is to alert user at the due time.
 - Store tasks in a list. Always sort tasks based on the due time, from the earlist to the last. Please make locating a task very efficient since the list is already sorted by the timestamp. For example you should not re-sort the whole list when adding a new task. 
 - To get a task from the list, use the timestamp in the task ID to help quickly locate the task in the list.

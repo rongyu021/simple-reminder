@@ -11,10 +11,6 @@ from langgraph.prebuilt import create_react_agent
 import asyncio
 
 load_dotenv()
-import warnings
-from langsmith.utils import LangSmithMissingAPIKeyWarning
-
-warnings.filterwarnings("ignore", category=LangSmithMissingAPIKeyWarning)
 
 # Initialize Azure-backed LLM
 llm = AzureChatOpenAI(

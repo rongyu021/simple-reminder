@@ -51,7 +51,7 @@ class TaskManager:
             else:
                 # Get the directory where the script is located
                 script_dir = Path(__file__).parent
-                self.csv_file = script_dir / "tasks.csv"
+                self.csv_file = script_dir /".data"/ "tasks.csv"
         else:
             self.csv_file = csv_file
         self.tasks: List[Task] = []
@@ -60,7 +60,12 @@ class TaskManager:
     
     def load_from_csv(self):
         """Load tasks from CSV file at initialization"""
+        file_dir=os.path.dirname(self.csv_file)
         if not os.path.exists(self.csv_file):
+            # if the target directory does not exist, create it
+            file_dir=os.path.dirname(self.csv_file)
+            if file_dir and not os.path.exists(file_dir):
+                os.makedirs(file_dir, exist_ok=True)
             return
         
         #clean up the tasks list
@@ -114,7 +119,7 @@ class TaskManager:
                     row = asdict(task)
                     row['alert_times'] = json.dumps(row['alert_times'])
                     writer.writerow(row)
-                    
+       
         except Exception as e:
             print(f"Error saving tasks to CSV: {e}")
     
