@@ -1,0 +1,57 @@
+__pycache__/
+
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+# Environment configuration
+*.env
+secrets.txt
+
+# Logs and debug files
+*.log
+*.tmp
+*.out
+*.err
+
+# Data files
+.data/
+
+# Dependency and package management
+*.egg-info/
+dist/
+build/
+pip-wheel-metadata/
+*.whl
+
+# VS Code settings
+.vscode/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# Node.js (if using LangChain JS agents)
+node_modules/
+*.tsbuildinfo
+
+# OS-generated junk
+.DS_Store
+Thumbs.db
+
+# Git conflict files
+*.orig
+
+# Ignore test cache files
+.pytest_cache/
+
+# Language model cache (for local inference)
+*.bin
+*.pt
+*.ckpt
+models/
+
+# Misc
+*.sqlite3
